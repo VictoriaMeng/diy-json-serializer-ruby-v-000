@@ -5,9 +5,8 @@
 <script type="text/javascript" charset="utf-8">
 $(function () {
   $(".js-more").on('click', function() {
-    var id = $(this).data("id");
-    $.get("/posts/" + id + "/body", function(data) {
-      // Replace text of body-id div
+    const id = $(this).data("id");
+    $.get("/posts/" + id + "/post_data", function(data) {
       $("#body-" + id).text(data);
     });
   });
